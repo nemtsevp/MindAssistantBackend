@@ -1,0 +1,14 @@
+// Create
+curl -X POST -d "{\"name\": \"project1\"}" localhost:3000/projects/create
+curl -X POST -d "{\"name\": \"data1\", \"project\": 1}" localhost:3000/data/create
+
+// Delete
+curl -i -X POST -d "id=1" localhost:3000/projects/delete
+curl -i -X POST -d "id=1" localhost:3000/data/delete
+
+// Update
+curl -X POST -d "{\"name\": \"project1\", \"id\": 1}" localhost:3000/projects/update
+curl -X POST -d "{\"name\": \"hello\", \"id\": 4, \"project\": 1, \"coordinates\": {\"x\": 0, \"y\": 0}, \"content\": []}" localhost:3000/data/update
+
+// In work
+curl -X POST -d "{\"name\": \"hello\", \"id\": 4, \"project\": 1, \"coordinates\": {\"x\": 0, \"y\": 0}, \"content\": [{\"name\": \"Заголовок\", \"order\": 0, \"fields\": [{\"type\": \"textarea\", \"value\": \"Описание\", \"order\": 0}]}, {\"name\": \"Заголовок\", \"order\": 0, \"fields\": [{\"type\": \"textarea\", \"value\": \"Описание\", \"order\": 0}]}]}" localhost:3000/data/update
